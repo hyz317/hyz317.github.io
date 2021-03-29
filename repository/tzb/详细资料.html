@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="六自由度全景直播近年来虚拟现实技术发展迅速，相关产业蓬勃发展；5G技术也逐渐成熟，数据传输速率得到了前所未有的提升，延迟也大幅降低。在这样的大背景下，全景直播愈发受到重视，已经纳入了国家远景目标纲要。全景直播作为VR技术的应用之一，迁移性强，可用于沉浸式远程教学等诸多领域，是VR技术未来发展的重要方向，也能极大提升人们的文娱生活质量。目前市面上的VR产品已支持六自由度体验，但VR内容的制作与场景重">
+<meta property="og:type" content="website">
+<meta property="og:title" content="silane&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/repository/tzb/%E8%AF%A6%E7%BB%86%E8%B5%84%E6%96%99.html">
+<meta property="og:site_name" content="silane&#39;s blog">
+<meta property="og:description" content="六自由度全景直播近年来虚拟现实技术发展迅速，相关产业蓬勃发展；5G技术也逐渐成熟，数据传输速率得到了前所未有的提升，延迟也大幅降低。在这样的大背景下，全景直播愈发受到重视，已经纳入了国家远景目标纲要。全景直播作为VR技术的应用之一，迁移性强，可用于沉浸式远程教学等诸多领域，是VR技术未来发展的重要方向，也能极大提升人们的文娱生活质量。目前市面上的VR产品已支持六自由度体验，但VR内容的制作与场景重">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/1.jpg">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/2.jpg">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/fisheye.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/ssv.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/msi.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/dataset.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/1.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/1.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/2.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/fisheye.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/3.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/4.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/5.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/formula/6.png">
+<meta property="og:image" content="http://s.hyz18.top/repository/tzb/result.png">
+<meta property="article:published_time" content="2021-03-29T03:29:57.208Z">
+<meta property="article:modified_time" content="2021-03-29T03:29:57.208Z">
+<meta property="article:author" content="某蛋w">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://s.hyz18.top/repository/tzb/1.jpg">
+
+<link rel="canonical" href="http://yoursite.com/repository/tzb/%E8%AF%A6%E7%BB%86%E8%B5%84%E6%96%99">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | silane's blog
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">silane's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">暴风想写前端</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact/" rel="section"><i class="fa fa-user fa-fw"></i>扩列！</a>
+
+  </li>
+        <li class="menu-item menu-item-repository">
+
+    <a href="/repository/" rel="section"><i class="fa fa-box fa-fw"></i>个人仓库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-user-friends fa-fw"></i>友链</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/repository/">REPOSITORY</a></li>
+            <li><a href="/repository/tzb/">TZB</a></li>
+            <li>详细资料</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h2 id="六自由度全景直播"><a href="#六自由度全景直播" class="headerlink" title="六自由度全景直播"></a>六自由度全景直播</h2><p>近年来虚拟现实技术发展迅速，相关产业蓬勃发展；5G技术也逐渐成熟，数据传输速率得到了前所未有的提升，延迟也大幅降低。在这样的大背景下，全景直播愈发受到重视，已经纳入了国家远景目标纲要。全景直播作为VR技术的应用之一，迁移性强，可用于沉浸式远程教学等诸多领域，是VR技术未来发展的重要方向，也能极大提升人们的文娱生活质量。目前市面上的VR产品已支持六自由度体验，但VR内容的制作与场景重建仍停留在三自由度范围内，因此六自由度相关算法的研发势在必行。本项目致力于完成一个包含数据采集、处理、传输、影像编解码与播放全过程的、让用户佩戴 VR 头盔即可体验的六自由度全景直播系统。</p>
+<p>六自由度全景直播的核心在于如何高效、高质量的完成场景重建。以深度估计为基础的<strong>传统场景重建</strong>方法有着重建速度慢、<strong>无法处理复杂遮挡和高光</strong>等诸多问题，成为了全景直播迈向六自由度技术的阻碍。本项目<strong>创新性地引入</strong>多层含透明度场景切片MSI (Multi-Sphere Image)表示场景，解决了传统以 Mesh 格式存储时场景过于平滑、遮挡信息丢失、场景文件较难压缩等问题，同时极大提升了重建速度。</p>
+<p>场景重建部分使用多张鱼眼图片及其相机姿态作为输入，然后生成SSV (Sphere Sweep Volume)，将多个角度的图像投影至中心视角的若干深度的球面上，若在某深度下多张图像在某个点重合“聚焦”，证明该深度就是该点的真实深度；接下来将 SSV 输入全卷积神经网络，预测得到每层的 SSV 权重和透明度值，最终生成 MSI 完成场景重建。采用深度学习、以<strong>端到端</strong>的方式训练及重建场景，大大简化了场景重建步骤。由于没有适合本项目的数据集，我们使用 UnrealCV 等虚拟引擎<strong>自行构建数据集</strong>，并开展训练，效果良好。</p>
+<p>以 MSI 格式表示的场景也可以方便的使用 Unity 等 3D 模拟软件进行场景播放器制作，让用户在 VR 眼镜中即可感受到六自由度沉浸式全景直播的体验。</p>
+<p>目前全景直播的市场需求在逐步扩大，即将到来的北京冬奥会等大型活动已将全景直播列为标准项目。鉴于目前六自由度内容的制作技术与算法仍存在着空缺，若此项目顺利完成，则可弥补行业内的短板，丰富VR产业界产品的多样性，具有很高的经济效益和宣传价值。</p>
+<h3 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h3><p>随着国家“十四五”纲要的提出，推动以虚拟现实技术为代表的数字经济重点产业的发展已成为关键目标。近些年来以 VR（Virtual Reality）、AR（Argumented Reality）以及 MR（Mixed Reality）为代表的一类技术的研发以及应用相当火热，有许多的创业者以此为基础创办了企业。这些技术我们在这里统称为虚拟现实，他们通过采集现有的真实场景或者直接生成新的场景，通过VR头盔等特殊设备营造虚拟世界，给用户近乎于真实世界的观感。随着社会生产力和科技的不断发展，各行各业对于虚拟现实技术的需求越发强烈，可以应用在营造更强的娱乐体验、沉浸式远程教学、手术模拟、军事演习等场合，可以预见 VR 技术在未来将会蓬勃发展。</p>
+<p>另一方面，音视频的直播也是一个热门的领域，他们将远程场景通过多种媒介以尽可能低的延迟展现给用户，让用户可以最为及时、全面和真实的了解到另一个地方所发生的事件。我们知道，传统的直播指的是通过单个摄像机捕捉画面，将单个视角的图像传递给用户，这里的媒介就是单个视角的图片。与之相对的，全景直播指的就是采集直播场地的全景信息推流给用户。相较于传统的直播，目前市面上的全景直播可以提供给用户三自由度（即感知用户头部转动的三个方向）的观看体验。同时，随着近年来5G技术的逐渐成熟，数据传输速率得到了前所未有的提升，延迟也大幅降低，为信息量更大的多媒体应用奠定了基础。</p>
+<p>不难发现，二者之间有着密切的联系：直播可以是虚拟现实技术的一个应用，同时直播表现的媒介也可以通过虚拟现实来展现出来。目前的全景直播给予了用户三自由度的体验，但是完整的虚拟现实的体验应该是六自由度的。六自由度场景能够额外感知用户平动的三个方向，能带给用户真实的世界；而三自由度场景只是一层单薄的、带有颜色的球壳而已。</p>
+<p>六自由度全景直播，即直播方采集直播场地的三维信息，然后通过网络传输到远方的用户端上，使得用户可以通过虚拟现实相关设备来真切的感受到直播场地的画面。此技术可以让用户自行选择在直播场地的不同方位和视角进行观看，而不局限于传统直播方式中摄像机的摆放。如果此技术能够实施，不仅可以进行各项全景赛事直播，还可以用于拍摄音乐会、演唱会甚至消逝的文化古迹等，留存无法复现的经典。这将会是多媒体技术和虚拟现实技术的一次极大提升，也将在很大程度上促进人们对于 VR 技术的接受度、改变人们的生活方式。</p>
+<p>不仅如此，作为六自由度全景直播核心的实时场景重建技术也有着很高的扩展性，完整场景的建立为人机交互等技术的加入提供可能。例如营造远程课堂，在疫情等紧急情况下让学生足不出户体验到真实上课的感觉；建立虚拟线上交流室、会议室，让网友随时随地“线下”交流、跨国会议的举办变得更轻松等。</p>
+<p>但是目前市场上仅有支持三自由度全景直播的产品：用户的视角是自由的，但是观看的位置还是取决于摄像机的摆放，是单一的。同时，目前市面上的三自由度的全景直播由于缺少其他维度的信息，而用户的移动并不局限于其所支持的三自由度，因此容易给用户造成严重的眩晕感，缺少应有的沉浸的观看体验。</p>
+<p>目前仅使用市面上的技术也无法实现六自由度的全景直播，究其原因，一方面是虚拟现实的相关技术本身尚未成熟，存在很多问题；另一方面是对于三维信息的实时采集、传输与渲染都对算力、网络和存储等硬件基础设施存在很高的要求。相比于三自由度只需要进行广角图片的拼接，六自由度需要建立出完整的三维模型，这加大了场景构建的难度。一种方法是人工使用建模软件构建静态场景，若想营造出近乎现实世界的体验，人力成本非常高；另一种是采集现实数据，通过主动获取深度信息或根据已有图像进行特征提取匹配、估测深度重建场景，但这种方法重建场景速度也不甚理想，且重建出的场景文件效果不佳，均难以用于六自由度全景直播。近年来，基于深度学习的六自由度场景重建方法被提出，使场景重建更加简便，但大部分工作基于平面图像，不能进行全空间三维场景重建；基于全景图像的工作需要以360°全景图作为输入，不能直接通过VR相机的广角镜头获取，实用性较低。</p>
+<p>我们所希望的，是通过本项目最新开发的场景重建技术，以尽可能低的成本提供一个支持完整的支持六自由度内容的制作、传输、渲染和观看的技术链。本项目创新性地引入 MSI (Multi-Sphere Image) 即多层含透明度场景切片表示场景，解决了传统以 Mesh 格式存储时场景过于平滑、遮挡信息丢失、场景文件较难压缩等问题，同时极大提升了重建速度；训练使用多张鱼眼图像为输入，可以使用市面上常见的VR相机进行数据采集；采用深度学习对场景切片进行预测，以端到端的方式训练及重建场景，大大简化了场景重建步骤及训练难度。以 MSI 格式表示的场景也可以方便的使用 Unity 等 3D 模拟软件进行场景播放器制作，让用户在 VR 眼镜中即可感受到六自由度沉浸式全景直播的体验。我们的解决方案考虑了整个直播流程中流畅度、场景质量等可能出现的问题，给最终产品的落地、生产和推广创造了更大的可能性。</p>
+<h3 id="2-作品框架"><a href="#2-作品框架" class="headerlink" title="2. 作品框架"></a>2. 作品框架</h3><h4 id="2-1-项目概览"><a href="#2-1-项目概览" class="headerlink" title="2.1 项目概览"></a>2.1 项目概览</h4><p>本项目致力于完成一个包含数据采集、处理、传输、影像编解码与播放全过程的六自由度全景直播系统。</p>
+<p>该系统主要分为以下四个部分：</p>
+<ul>
+<li><p>数据采集端。可以使用普通的 VR 相机（带有多个鱼眼镜头）进行数据采集，并将采集到的多张鱼眼图像实时传输至服务器端；</p>
+</li>
+<li><p>服务器端。服务器接收采集到的多张鱼眼图像，并将其与相机姿态一并输入我们开发的六自由度场景生成系统。将输出的场景文件（即 Multi-Sphere Image）进行压缩，并推流至 Unity 播放器；</p>
+</li>
+<li><p>播放器端。采用 Unity 作为场景播放器，接收服务器传输的数据流，并将场景文件连续加载以达到视频效果；</p>
+</li>
+<li><p>终端设备。开发特定 VR 眼镜适配的 Unity 播放器后，用户佩戴 VR 眼镜即可感受到六自由度沉浸式全景直播的体验。</p>
+<p>其中最核心的部分在于服务器上搭载的六自由度场景生成系统，该系统的具体实现以及训练用数据集的生成会在之后的章节中详细阐述。</p>
+<p><img src="http://s.hyz18.top/repository/tzb/1.jpg" alt="image-20210327113551166"></p>
+</li>
+</ul>
+<h4 id="2-2-技术路线"><a href="#2-2-技术路线" class="headerlink" title="2.2 技术路线"></a>2.2 技术路线</h4><p>六自由度全景直播的核心在于如何高效、高质量的完成场景重建。我们提出的重建主要流程如下图所示：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/2.jpg" alt="img"></p>
+<p>我们一般使用 VR 相机的若干鱼眼镜头采集到的鱼眼图像及镜头对应的姿态作为该系统的输入。得益于本项目中提出的加权球面扫掠法（Weighted Sphere Sweep Method），可以支持任意尺寸、任意视场角、任意类型的图片作为输入。例如一般的针孔相机（pinhole camera）图像，经过等距柱状投影（Equirectangular Projection，ERP）后也可以作为网络的输入，与鱼眼图像的作用是一致的。但相应的，每一个像素处经过投影后覆盖到的图片越多，重建出的场景效果就会越好。不同类型图片进行 ERP 投影变换示意如下图所示：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/fisheye.png" alt="img"></p>
+<p>上述提到的加权球面扫掠法（Weighted Sphere Sweep Method）是本项目支持输入图片多样性的关键之一，以往的研究均不支持以任意类型或任意张图像作为输入以重建三维场景。球面扫掠体（Sphere Sweep Volume）的提出是为了把景物的潜在深度信息转换成更容易被卷积神经网络提取的特征，从而使得神经网络对于深度信息的预测效果更好。</p>
+<p>在相机位置变化时，不同深度下的景物在图像中位置的偏移量也不同，此即为视差，可以反映物体的真实深度。如果已知某个像素点在一个特定姿态的相机（设为相机 1）拍摄的图片中的深度，那么任意选定一个处于其他姿态的相机（设为相机 2）并拍一张图，如果将该像素点进行图像 1 坐标系-&gt; 相机 1 坐标系-&gt; 世界坐标系-&gt; 相机 2 坐标系-&gt; 图像 2 坐标系的坐标系转换，即完成一次“视角变换投影”，该像素点应该与图像 2 中的像素点完全重合。反之，如果已知的深度是错误的，那么将一定不重合。</p>
+<p>但每个像素点对应真实世界中的深度是无法预知的，故我们在景物可能位于的深度范围内按照倒数空间均匀分布选取若干个离散化的深度值，并建立若干个以这些深度值为半径的球面，每个球面对应一张全景图像，在倒数空间选取离散化深度的原因是景物的视差与深度成反比。若离散化的深度取的足够密，那么我可以近似认为每个像素点的深度都可以用一个球面对应的深度表示。</p>
+<p>加权球面扫掠体示意（其中一层）如下图所示，可以看到绿色框中的景物经过投影后重合，意味着该景物的深度就是当前深度；红色框中的景物经过投影后不重合，表明当前深度不是该景物深度。</p>
+<p><img src="http://s.hyz18.top/repository/tzb/ssv.png" alt="img"></p>
+<p>我们选取一个特定相机姿态，并将其他相机拍摄到的图片经过等距柱状投影成ERP图像后均投影到该相机姿态下。若给定的相机姿态准确无误，所有其他相机下拍到的某景物的投影都会在某一个特定深度下重合，重合即代表该深度是景物原本的深度。是否重合的判定交与后续的卷积神经网络预测，相比直接预测场景的整体形状，这种预测“是否有重合的特征”的工作更适合卷积神经网络。</p>
+<p>如果输入的图像中有信息地区域能够完全均匀地覆盖球面，那么投影时只需要简单做加权平均即可，但很不幸的是，由于VR相机种类的不同、采用镜头的视场角不同、类型不同（如针孔相机或鱼眼相机）等问题，往往不能对整个球面做到均匀覆盖，可能出现景物1被4张图片覆盖、景物2被3张图片覆盖的情况。同时，不同相机到场景生成的中心位置的距离也是不同的，距离更远的图像对最终场景重建的贡献应该越小。因此，我们提出了加权球面扫掠法（Weighted Sphere Sweep Method），对每张图片的权重、每个像素点被不同图像覆盖的次数加权再进行投影，解决了上述问题。具体实现会在之后的章节中进一步阐述。</p>
+<p>卷积神经网络以加权球面扫掠体（WSSV）作为输入，并预测每一个深度下所有位置的透明度值。透明度就象征了深度信息：如果某景物的深度非常靠近某球面对应的深度，那么它在该球面上的不透明度就接近1；反之则接近0。神经网络不对球面的颜色信息进行预测，因为颜色信息可以完全由WSSV提供。将透明度与加权球面扫掠体本身在最后一个维度（即通道维度）合并起来，即得到MSI（Multi-Sphere Image，多层含透明度的图像切片），如下图所示：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/msi.png" alt="img"></p>
+<p>从切片示意图中可以看出，处于相似深度下的景物的透明度基本为1，而其他部分基本为0，说明神经网络能够对深度进行有效的预测。使用预测出的MSI在新视角下渲染出的全景图也与ground truth很接近，实验具体细节与量化指标将在后续部分详细介绍。</p>
+<p>本项目采用端到端的方式训练。每一组数据由6张鱼眼图像（模拟单个VR相机的6个镜头）、1张全景图像（作为光心处全景图像的Ground Truth）以及所有相机的内外参组成：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/dataset.png" alt="img"></p>
+<p>训练时将6张鱼眼图像及其相机内外参输入网络，经过球面扫掠、卷积神经网络后生成MSI并在光心处渲染全景图。将此图片和数据集中的Ground Truth全景图做对比计算Loss，不需要已有的场景文件，大大简化了数据集制作的难度。</p>
+<h3 id="3-六自由度全景数据集生成"><a href="#3-六自由度全景数据集生成" class="headerlink" title="3. 六自由度全景数据集生成"></a>3. 六自由度全景数据集生成</h3><p>在这项研究中，我们提出了一种生成任意数量的，支持不同用途、不同分辨率全景数据集的方法——使用两个计算机图形渲染框架 UnrealCV和 Replica生成用于训练和评估的高质量 VR 数据集。UnrealCV 引擎包含若干手工制作的高精度三维模型，可以通过调整光照变化和反射渲染逼真的图像；Replica 引擎使用室内重建模型，生成具有与实际纹理和实际移动范围相似的渲染图像。我们结合使用这两个虚拟引擎生成的数据集模拟真实世界中的场景，以解决现实场景数据集缺乏、难以生成的问题。</p>
+<p>为了使用上述计算机图形引擎合成全景图像，我们首先生成 6 个 120◦ 针孔相机模型图像，这些图像的中心分别朝向虚拟引擎对应的 x-y-z 坐标轴正方向及反方向，并且 6 张图像对应的针孔相机模型的光心位于同一点，以避免相机之间出现视差。然后，我们将 6 个针孔相机图像进行等距柱状投影（Equirectangular Projection，ERP）并对于图像直接重叠的区域进行融合以避免混叠。为了模拟任意传感器数量的 VR 相机镜头，我们在每个传感器的相机姿态上都进行 ERP 渲染，并根据镜头的视场（field of view， fov）遮盖掉不可见的部分。</p>
+<p>在我们的实验中，我们选择了 2000 个位置生成六自由度内容作为数据集，并进一步分为 1600 个位置    的训练集和 400 个位置的测试集以进行网络的训练和评估。数据集的拆分是基于虚拟相机的位置实现的，训练集和测试集之间保证没有重叠；训练时将两个数据集结合训练，但测试时分开，以检测网络的鲁棒性。由于 GPU 的显存限制，我们在每个位置上都提供了两个分辨率 (640×320 and 400×200) 并使用不同层数的 MSI（Multi-Sphere Image）进行训练，对于每个视角也分别在两个不同 fov（190° 和 220°）下渲染，以模拟来自不同 VR 摄像机模块的鱼眼图像。</p>
+<h3 id="4-六自由度全景视频生成系统"><a href="#4-六自由度全景视频生成系统" class="headerlink" title="4. 六自由度全景视频生成系统"></a>4. 六自由度全景视频生成系统</h3><p>本系统将多张 VR 相机采集到的鱼眼图像转换为可使用的以多层球面图像为表示方式的三维场景，主要分为以下三个步骤（如下图所示）：首先使用加权球面扫掠法（Weighted Sphere Sweep Method）将鱼眼图像投影到多层同心球面上，生成 WSSV（Weighted Sphere Sweep Volume）；该四维矩阵被输入到三维全卷积神经网络中，以预测每个深度下每个像素的的透明度值；随后将预测到的透明度通道值与 WSSV 结合起来，最后按照公式（在下文会具体提到）计算 MSI，完成六自由度场景重建。</p>
+<p><img src="http://s.hyz18.top/repository/tzb/1.png" alt="img"></p>
+<h4 id="4-1-多层球面图像-Multi-Sphere-Images"><a href="#4-1-多层球面图像-Multi-Sphere-Images" class="headerlink" title="4.1 多层球面图像 (Multi-Sphere Images)"></a>4.1 多层球面图像 (Multi-Sphere Images)</h4><p>受多层平面图像（MPI，Multi-Plane Image）及其在视图合成应用中性能较高的启发，我们在全景内容表示上引入了多层球面图像（MSI，Multi-Sphere Image）的表示方式。按照类似于MPI的设计，我们拟定的MSI表示形式由 N 个图像组成，以表示 N 层同心球体，并将它们用等距柱状投影变换成平面图像，以方便卷积神经网络进行进一步的处理。MSI的每层图像都包含3个颜色通道和1个附加的 a 透明度通道信息，这种场景表示方式可以涵盖特殊材质信息（如半透明材质、大理石等同时有镜面反射和漫反射的材质）和遮挡信息，同时也允许使用PNG、JPEG等标准图像压缩算法压缩MSI场景文件。</p>
+<p>MPI可微渲染的性质在MSI同样适用。如下面公式所示，MPI可微渲染过程中，先计算每一条光线与每一层MPI Li 相交的位置 pi，然后插值得到该位置的颜色值 c_pi 和透明度值 a_pi，最后按下述公式计算输出的颜色 c：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/1.png" alt></p>
+<p>在六自由度下对于MSI的渲染过程是与MPI相似的。如下图公式所示，首先需要确定每一条从最内侧球面内部、以视角 (Θ, Φ) 从 (x,y,z) 位置发出的光线与第 i 层MSI的交点，这通过图形引擎中的射线-平面相交函数 q 确定，其中 di 是第 i 层球面的半径；然后计算每一条光线渲染出的颜色值 c_x,y,z,Θ,Φ ，通过MSI每层的颜色值 c_si 和透明度值 a_si 确定：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/2.png" alt></p>
+<p>此过程可以在Unity、OpenGL等通用的计算机图形引擎上以较高效率完成。</p>
+<h4 id="4-2-加权球面扫掠体（WSSV）的生成"><a href="#4-2-加权球面扫掠体（WSSV）的生成" class="headerlink" title="4.2 加权球面扫掠体（WSSV）的生成"></a>4.2 加权球面扫掠体（WSSV）的生成</h4><p>加权球面扫掠体（Weighted Sphere Sweep Volume, WSSV）由 N 层同心球体构成，并选择最近物体距离与最远物体距离之间的倒数空间中均匀选择这 N 个球体的半径。由于VR相机通常使用鱼眼镜头采集图像，而鱼眼镜头会压缩视场角并导致图像边缘出现色差，因此我们提出了一种可以减少此类光学问题的加权球面扫掠法。<br><img src="http://s.hyz18.top/repository/tzb/fisheye.png" alt="img"><br>上面左图示意了220°视角场下的鱼眼图像，右图示意了鱼眼图像进行ERP投影后得到的图像，首先如上图将多张输入的鱼眼图像扭曲为ERP（Equirectangular projection）形式；然后按照相机的内外参将 M 个输入的ERP图像投影到同样以ERP形式表示的 N 层球面上。在每一层球面中，我们将 M 张输入图像的重叠区域按照以下公式进行融合：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/3.png" alt></p>
+<p>其中 Q 是位置 p 上重叠图像的数量，c_pi 是位置 p 上第  i  张图像的颜色, 参数 r 是光学畸变值。在这里，我们使用 r=1-rp，其中 rp 是像素 p 到光心的距离，该距离被归一化到了[0,1]上。该 r 值也可以使用镜头的MTF数据进行替换。然后将 N 个投影后的ERP图像堆叠成四维张量，此即为WSSV（4个维度分别为ERP图像的高 H、宽 W 、球面个数 N 和颜色通道数）。由于每张ERP形式的图片含有3个通道的颜色（RGB），最终生成的WSSV的矩阵形状为 [H,W,D,3]。</p>
+<p>WSSV的构建过程可以使用下面的公式表示，先将原始图像 Ij 输入加权翘曲变换函数  W，按照其相机姿态 wj 投影到光心处给定的相机姿态 wc 下的若干个同光心球面上，这些球面的半径  在di 最近物体距离与最远物体距离之间的倒数空间上均匀分布；然后通过S 函数对于每一层球面上投影后的不同图像堆叠起来（即在最后一个维度堆叠），生成四维张量WSSV：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/4.png" alt></p>
+<p>因为WSSV的每一层都是由投影到同一球体上的多个输入图像形成的，所以这些图像组合起来会得到类似于光场重新聚焦的结果：同一物体的多个图像投影到半径近似等于该物体真实距离的球面上时，将这些图像组合后会有“对焦成功”的效果。反之如果投影到了错误距离的球面上时，组合投影后的图像时，该物体会有“虚焦”的效果。我们通过训练三维全卷积神经网络以区分每个物体在特定半径的球面上是“实焦”还是“虚焦”并预测透明度值（“实焦”时不透明度接近1，“虚焦”时不透明度接近0），然后将其与WSSV进一步结合以生成MSI。</p>
+<h4 id="4-3-神经网络结构"><a href="#4-3-神经网络结构" class="headerlink" title="4.3 神经网络结构"></a>4.3 神经网络结构</h4><p> 本项目使用的网络结构如下表所示：所有卷积核的大小均为3； s, d, n 分别表示卷积使用的步长、膨胀卷积的程度以及输出通道的数目；depth这一列为每一层网络输入/输出中代表不同深度的同心球壳数目（以32层输入为例）；in和out两列是每一层网络输入/输出的累计步长。最后一列中 +​ 符号的含义为将两个张量在表示深度的维度上拼接，nnup为2倍最近邻上采样函数。</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>s</th>
+<th>d</th>
+<th>n</th>
+<th>depth</th>
+<th>in</th>
+<th>out</th>
+<th>input</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>conv1_1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>32/32</td>
+<td>1</td>
+<td>1</td>
+<td>WSSV</td>
+</tr>
+<tr>
+<td>conv1_2</td>
+<td>2</td>
+<td>1</td>
+<td>16</td>
+<td>32/16</td>
+<td>1</td>
+<td>2</td>
+<td>conv1_1</td>
+</tr>
+<tr>
+<td>conv2_1</td>
+<td>1</td>
+<td>1</td>
+<td>16</td>
+<td>16/16</td>
+<td>2</td>
+<td>2</td>
+<td>conv1_2</td>
+</tr>
+<tr>
+<td>conv2_2</td>
+<td>2</td>
+<td>1</td>
+<td>32</td>
+<td>16/8</td>
+<td>2</td>
+<td>4</td>
+<td>conv2_1</td>
+</tr>
+<tr>
+<td>conv3_1</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>8/8</td>
+<td>4</td>
+<td>4</td>
+<td>conv2_2</td>
+</tr>
+<tr>
+<td>conv3_2</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>8/8</td>
+<td>4</td>
+<td>4</td>
+<td>conv3_1</td>
+</tr>
+<tr>
+<td>conv3_3</td>
+<td>2</td>
+<td>1</td>
+<td>64</td>
+<td>8/4</td>
+<td>4</td>
+<td>8</td>
+<td>conv3_2</td>
+</tr>
+<tr>
+<td>conv4_1</td>
+<td>1</td>
+<td>2</td>
+<td>64</td>
+<td>4/4</td>
+<td>8</td>
+<td>8</td>
+<td>conv3_3</td>
+</tr>
+<tr>
+<td>conv4_2</td>
+<td>1</td>
+<td>2</td>
+<td>64</td>
+<td>4/4</td>
+<td>8</td>
+<td>8</td>
+<td>conv4_1</td>
+</tr>
+<tr>
+<td>conv4_3</td>
+<td>1</td>
+<td>2</td>
+<td>64</td>
+<td>4/4</td>
+<td>8</td>
+<td>8</td>
+<td>conv4_2</td>
+</tr>
+<tr>
+<td>nnup_5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4/8</td>
+<td>8</td>
+<td>4</td>
+<td>conv3_3+conv4_3</td>
+</tr>
+<tr>
+<td>conv5_1</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>8/8</td>
+<td>4</td>
+<td>4</td>
+<td>nnup_5</td>
+</tr>
+<tr>
+<td>conv5_2</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>8/8</td>
+<td>4</td>
+<td>4</td>
+<td>conv5_1</td>
+</tr>
+<tr>
+<td>conv5_3</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>8/8</td>
+<td>4</td>
+<td>4</td>
+<td>conv5_2</td>
+</tr>
+<tr>
+<td>nnup_6</td>
+<td></td>
+<td></td>
+<td></td>
+<td>8/16</td>
+<td>4</td>
+<td>2</td>
+<td>conv2_2+conv5_3</td>
+</tr>
+<tr>
+<td>conv6_1</td>
+<td>1</td>
+<td>1</td>
+<td>16</td>
+<td>16/16</td>
+<td>2</td>
+<td>2</td>
+<td>nnup_6</td>
+</tr>
+<tr>
+<td>conv6_2</td>
+<td>1</td>
+<td>1</td>
+<td>16</td>
+<td>16/16</td>
+<td>2</td>
+<td>2</td>
+<td>conv6_1</td>
+</tr>
+<tr>
+<td>nnup_7</td>
+<td></td>
+<td></td>
+<td></td>
+<td>16/32</td>
+<td>2</td>
+<td>1</td>
+<td>conv1_2+conv6_2</td>
+</tr>
+<tr>
+<td>conv7_1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>32/32</td>
+<td>1</td>
+<td>1</td>
+<td>nnup_7</td>
+</tr>
+<tr>
+<td>conv7_2</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>32/32</td>
+<td>1</td>
+<td>1</td>
+<td>conv7_1</td>
+</tr>
+<tr>
+<td>conv7_3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>32/32</td>
+<td>1</td>
+<td>1</td>
+<td>conv7_2</td>
+</tr>
+</tbody></table>
+<p>我们训练所用的公示如下：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/5.png" alt></p>
+<p>以上训练方法的目的为最大程度减少MSI在全新的视角下渲染出的图片与Ground Truth之间的差异。上述公式中，以WSSV作为三维全卷积神经网络 f 的输入，并预测 MSI；在 Render  函数中也使用了5.1节中的第一个公式，因此渲染过程是可微的；W 为等距柱状投影变换。</p>
+<p>损失函数方面，我们选择结合L1损失和VGG损失训练。L1损失的公式为 L ，即逐像素值差异的绝对值，用于保证整体颜色分布上不会有太大的差异；VGG损失对比了不同层级特征图的差异，用于让重建出的图像中的隐式特征与真实结果尽量靠近。<br>令Φ 为经过预训练的VGG-19网络。该网络共有16个卷积层，卷积层越靠后意味着特征图的抽象程度越高，浅层特征图常常反映边缘特征和颜色特征，深层特征图会反映物体类别等信息。若抽出网络不同层级的特征图并与目标图像的同层级特征图进行匹配、计算损失，将可以引导神经网络同时学习到细粒度的特征以及整体上的分布。令  Φl为网络中的所有层的集合， Φ0表示输入的图像，网络中的每一层均为三维张量。对于一个训练组合（输入图像 I 与目标图像 L），VGG损失可以表示为：</p>
+<p><img src="http://s.hyz18.top/repository/tzb/formula/6.png" alt></p>
+<p>其中 g 是正在训练的神经网络；Θ 是神经网络的参数；λ 为超参数，平衡不同层特征图之间对最终损失的影响大小。我们使用网络中的5层（conv1_2, conv2_2, conv3_2, conv4_2, conv5_2）用于最终计算，对应的 λi 分别取0.38, 0.21, 0.27, 0.18, 6.67。</p>
+<h4 id="4-4-性能评估"><a href="#4-4-性能评估" class="headerlink" title="4.4 性能评估"></a>4.4 性能评估</h4><p>流畅程度和场景质量是衡量全景直播的两个最重要的指标。<br>在流畅度方面，直播要求实时采集、实时重建、实时传输、VR头盔端实时加载，只要其中有一项无法达到实时进行，就无法进行直播。</p>
+<ul>
+<li>实时采集方面，本项目可以<strong>直接使用VR相机采集的鱼眼原始图像</strong>作为重建系统的输入；</li>
+<li>实时重建方面，使用使用8块Nvidia RTX 2080Ti GPU重建场景，速率可达到<strong>24fps</strong>，满足全景直播速率需求，当前以原始图像进行重建的工作最快只能达到2fps/GPU，且效果欠佳；</li>
+<li>实时传输方面，800x400x32大小的MSI使用H.265编码的码率大致为<strong>10Mbps</strong>，满足一般的网络传输条件；</li>
+<li>VR头盔端加载方面，使用Pico Neo等VR头盔可以轻松达到<strong>24fps的帧率</strong>。</li>
+</ul>
+<p>场景质量的评估方面，由于现在没有统一的衡量六自由度场景质量好坏的指标，一般采用在新视角渲染图像并与原始图像对比，计算峰值信噪比（PSNR）和结构相似性（SSIM）等指标衡量场景质量。SSIM从亮度、对比度、结构三方面度量图像相似性，数值越大代表图像失真越小；PSNR是基于误差敏感的图像质量评价，数值越大代表图像失真越小。</p>
+<p>我们在2000个位置上合成了数据，每一组数据包含由6个鱼眼镜头组成的VR摄像机采集到的鱼眼镜头数据数据，并随机将其视场角设为190和220。整个数据集中训练集共有1600组数据，其余400组为测试集。我们在Nvidia RTX 2080Ti GPU上对神经网络同时以分辨率640x320、采用32层MSI的数据和分辨率400x200、采用64层MSI的数据训练，均迭代40万次。</p>
+<p>随后，我们使用本项目提出的全景重建方法在测试集上生成MSI，并将每个MSI都在新的视角下渲染，与数据集中相同视角的Ground Truth全景图做对比，计算两张图之间的PSNR和SSIM值。我们的全景生成系统可以通过VR相机镜头拍摄的原始图像生成高质量的六自由度场景内容：与Ground Truth全景图的颜色信息相比较，我们渲染出的图片平均PSNR指标超过31dB。</p>
+<table>
+<thead>
+<tr>
+<th align="center">N</th>
+<th align="center">Dataset</th>
+<th align="center">Resolution</th>
+<th align="center">PSNR</th>
+<th align="center">SSIM</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">32</td>
+<td align="center">UnrealCV</td>
+<td align="center">400×200</td>
+<td align="center">28.28±2.45</td>
+<td align="center">0.90±0.03</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">UnrealCV</td>
+<td align="center">640×320</td>
+<td align="center">28.79±2.40</td>
+<td align="center">0.90±0.03</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">UnrealCV</td>
+<td align="center">400×200</td>
+<td align="center">28.52±2.51</td>
+<td align="center">0.90±0.03</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">UnrealCV</td>
+<td align="center">640×320</td>
+<td align="center">29.23±2.43</td>
+<td align="center">0.91±0.03</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">Replica</td>
+<td align="center">400×200</td>
+<td align="center">33.48±3.72</td>
+<td align="center">0.95±0.03</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">Replica</td>
+<td align="center">640×320</td>
+<td align="center">33.40±3.87</td>
+<td align="center">0.95±0.03</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">Replica</td>
+<td align="center">400×200</td>
+<td align="center">33.59±3.74</td>
+<td align="center">0.95±0.03</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">Replica</td>
+<td align="center">640×320</td>
+<td align="center">33.80±3.92</td>
+<td align="center">0.95±0.03</td>
+</tr>
+</tbody></table>
+<p>峰值信噪比与结构相似性测试结果如上表所示，我们分别在两个不同的分辨率下（ 400x200  和 640x320）、两种不同的MSI层数下（N=32 和 N=64）和两种不同的数据生成引擎下（UnrealCV 和 Replica）检验我们的网络效果。</p>
+<p>六自由度全景视频生成系统的输入输出如下图所示，左图是作为输入的多张鱼眼镜头图像；右图是使用本系统生成的MSI渲染得到的结果。</p>
+<p><img src="http://s.hyz18.top/repository/tzb/result.png" alt="img"></p>
+<h3 id="5-项目前景与未来工作"><a href="#5-项目前景与未来工作" class="headerlink" title="5.项目前景与未来工作"></a>5.项目前景与未来工作</h3><p>本项目致力于完成一个包含数据采集、处理、传输、影像编解码与播放全过程的六自由度全景直播系统。由于全景生成系统的通用性和六自由度在人机交互等方向的可扩展性，本项目迁移性较强，有着很多潜在应用场合：</p>
+<ul>
+<li>沉浸式远程教学。在新冠疫情的影响下，为了疫情防控的需要，大部分在校学生都经历过了网课带来的无法集中精力、无法与教师有效互动、没有上课氛围等问题，学习效率显著降低。若采用六自由度全景直播技术，可以让学生在家也体验到在线下课堂上课的感觉，让正常的教学活动尽可能少受疫情、重污染等应急事件的影响。</li>
+<li>各项体育赛事及电视节目转播。体育赛事由于其竞技性受到大众的喜爱，但在家中只能通过一般屏幕观看，现有的三自由度全景直播技术也只能让观众站在原地望向四周。若引入六自由度全景直播，则观众可以在家中佩戴VR头盔随意在场景中穿梭，从观看者变为参与者，大幅提升用户观感。</li>
+<li>演唱会、交响乐和文化遗产的重建与数字保留。许多经典的音乐会、演唱会是无法复现的；莫高窟等珍贵的文化遗产也在随着时间的流逝而不断失去它原本的面貌。若采用最新的技术全方位留存这些经典供后人观看，将会是一笔宝贵的财富。</li>
+</ul>
+<p>在未来的工作中，我们希望对六自由度全景视频生成系统进行进一步的扩展。由于多层球面切片（MSI）对于场景的表示范围有限，如果能使用多个VR相机生成多个MSI并进行某种混合预测，会带来更多的场景细节、更大的场景重建范围。但MSI的增多势必会加大网络负载和服务器的处理压力，同时由于MSI的文件体积较大，如果想追求更高的分辨率，开发对于MSI较为有效的压缩算法势在必行，今后会对其压缩方式进一步开展研究。</p>
+
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/repository/">REPOSITORY</a></li>
+            <li><a href="/repository/tzb/">TZB</a></li>
+            <li>详细资料</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#六自由度全景直播"><span class="nav-number">1.</span> <span class="nav-text">六自由度全景直播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引言"><span class="nav-number">1.1.</span> <span class="nav-text">1. 引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-作品框架"><span class="nav-number">1.2.</span> <span class="nav-text">2. 作品框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-项目概览"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 项目概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-技术路线"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 技术路线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-六自由度全景数据集生成"><span class="nav-number">1.3.</span> <span class="nav-text">3. 六自由度全景数据集生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-六自由度全景视频生成系统"><span class="nav-number">1.4.</span> <span class="nav-text">4. 六自由度全景视频生成系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-多层球面图像-Multi-Sphere-Images"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 多层球面图像 (Multi-Sphere Images)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-加权球面扫掠体（WSSV）的生成"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 加权球面扫掠体（WSSV）的生成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-神经网络结构"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 神经网络结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-性能评估"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 性能评估</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-项目前景与未来工作"><span class="nav-number">1.5.</span> <span class="nav-text">5.项目前景与未来工作</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="某蛋w"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">某蛋w</p>
+  <div class="site-description" itemprop="description">贵系大二咸鱼*1</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hyz317" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hyz317" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hyz18@mails.tsinghua.edu.cn" title="E-Mail → mailto:hyz18@mails.tsinghua.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" style="color: #999999;">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"> 某蛋 </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
